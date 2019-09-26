@@ -1,0 +1,80 @@
+<DOCTYPE html>
+    <html>
+      <head>
+          <title> Aframe Project </title>
+          //Image Source: https://www.allaboutbirds.org/guide/Peregrine_Falcon/id
+          //Ground image source: https://www.stocksy.com/749205/ocean-from-above
+          //Sound source: http://soundbible.com/1935-Ocean-Waves.html
+        <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+      </head>
+      <body>
+        <a-scene>
+            <a-assets>
+            <a-asset-item src="assets/bird_model.obj" id="bird_obj"></a-asset-item>
+            <a-asset-item id="bird_mtl" src="assets/bird_model.mtl"></a-asset-item>
+            <a-mixin id="bird" ></a-mixin>
+                
+            <img id="ground" src="image/water.jpg">
+                
+            <a-asset-item src="assets/cliff_model.obj" id="cliff_obj"></a-asset-item>
+            <a-asset-item id="cliff_mtl" src="assets/cliff_model.mtl"></a-asset-item>
+            <a-mixin id="cliff" ></a-mixin>
+                
+            <a-asset-item src="assets/bush_model.obj" id="bush_obj"></a-asset-item>
+            <a-asset-item id="bush_mtl" src="assets/bush_model.mtl"></a-asset-item>
+            <a-mixin id="bush" ></a-mixin>
+
+            <a-asset-item src="assets/small_tree_model.obj" id="tree_obj"></a-asset-item>
+            <a-asset-item id="tree_mtl" src="assets/small_tree_model.mtl"></a-asset-item>
+            <a-mixin id="tree" ></a-mixin>
+                
+            <audio src="assets/Ocean_Waves-Mike_Koenig-980635527.mp3" autoplay preload></audio>
+                
+            <a-asset-item src="assets/red_fish_model.obj" id="red_fish_obj"></a-asset-item>
+            <a-asset-item src="assets/red_fish_model.mtl" id="red_fish_mtl"></a-asset-item>
+            <a-mixin id="red_fish"></a-mixin>
+                
+            <a-asset-item src="assets/green_fish_model.obj" id="green_fish_obj"></a-asset-item>
+            <a-asset-item src="assets/green_fish_model.mtl" id="green_fish_mtl"></a-asset-item>
+            <a-mixin id="green_fish"></a-mixin>
+                
+            <a-asset-item src="assets/black_fish_model.obj" id="black_fish_obj"></a-asset-item>
+            <a-asset-item src="assets/black_fish_model.mtl" id="black_fish_mtl"></a-asset-item>
+            <a-mixin id="black_fish"></a-mixin>
+                
+            <img id="ground" src="image/water.jpg">
+            </a-assets>
+            
+            <a-sky color=#4f8ba8></a-sky>
+            
+            <a-entity mixin="bird" obj-model="obj: #bird_obj; mtl: #bird_mtl" position="2 0.4 0" rotation = "0 30 0" scale= ".5 .5 .5" animation="property: position; from: 2 0.4 0; to: 4 .4 0; loop: true; dir: alternate; dur: 1000;" animation__2="property: rotation; to: 0 180 0; loop:true; dir: alternate; delay: 1000; dur: 1000;"></a-entity>
+            
+            <a-entity mixin="red_fish" obj-model="obj: #red_fish_obj; mtl: #red_fish_mtl" position="-3 -5 0" scale=".2 .2 .2" animation="property: position; from: -3 -5 0; to: -3 -5 6; loop:true; dir:alternate;" animation__2="property: rotation; to: 0 180 0; loop:true; dir: alternate; delay: 3000;"></a-entity>
+            
+            <a-entity mixin="green_fish" obj-model="obj: #green_fish_obj; mtl: #green_fish_mtl" position="10 -5 15" scale=".2 .2 .2" rotation= "0 90 0" animation="property: position; from: 10 -5 10; to: 15 -5 10; loop:true; dir:alternate;" animation__2="property: rotation; to: 0 270 0; loop:true; dir: alternate; delay:500; "></a-entity>
+            
+            <a-entity mixin="black_fish" obj-model="obj: #black_fish_obj; mtl: #black_fish_mtl" position="10 -6 15" scale=".2 .2 .2" rotation= "270 180 0" animation="property: position; from: 20 -6 0; to: 20 0 0; loop:true; dir:alternate;" animation__2="property: rotation; to: 0 0 0; loop:true; dir: alternate; delay: 1000; "></a-entity>
+            
+            <a-entity mixin="cliff" obj-model="obj: #cliff_obj; mtl: #cliff_mtl" position="5 -2 0"></a-entity>
+            
+            <a-entity mixin="bush" obj-model="obj: #bush_obj; mtl: #bush_mtl" position="9 -1 2" scale=".3 .3 .3"></a-entity>
+            
+            <a-entity mixin="bush" obj-model="obj: #bush_obj; mtl: #bush_mtl" position="15 -1 -1" scale=".3 .3 .3"></a-entity>
+            
+            <a-entity mixin="bush" obj-model="obj: #bush_obj; mtl: #bush_mtl" position="5 -1 -2" scale=".3 .3 .3"></a-entity>
+            
+            <a-entity mixin="bush" obj-model="obj: #bush_obj; mtl: #bush_mtl" position="13 -1 -4" scale=".3 .3 .3"></a-entity>
+            
+            <a-entity mixin="bush" obj-model="obj: #bush_obj; mtl: #bush_mtl" position="11 -2 7" scale=".3 .3 .3"></a-entity>
+            
+            <a-entity mixin="tree" obj-model="obj: #tree_obj; mtl: #tree_mtl" position="7 -1 3" scale=".5 .5 .5"></a-entity>
+            
+            <a-entity mixin="tree" obj-model="obj: #tree_obj; mtl: #tree_mtl" position="10 -1 -3" scale=".5 .5 .5"></a-entity>
+            
+            <a-plane src="#ground" height="100" width="100" position="0 -5 0" rotation="-90 0 0"></a-plane>
+            
+            <a-camera position="10 0 20"></a-camera>
+        </a-scene>
+      </body>
+    </html>
+</DOCTYPE>
