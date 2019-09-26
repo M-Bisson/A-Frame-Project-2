@@ -2,9 +2,10 @@
     <html>
       <head>
           <title> Aframe Project </title>
+          //SOURCES
           //Image Source: https://www.allaboutbirds.org/guide/Peregrine_Falcon/id
           //Ground image source: https://www.stocksy.com/749205/ocean-from-above
-          //Sound source: http://soundbible.com/1935-Ocean-Waves.html
+          //Sound source: http://soundbible.com/1935-Ocean-Waves.html - UNUSED
         <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
       </head>
       <body>
@@ -28,8 +29,8 @@
             <a-asset-item id="tree_mtl" src="assets/small_tree_model.mtl"></a-asset-item>
             <a-mixin id="tree" ></a-mixin>
                 
-            <audio src="assets/Ocean_Waves-Mike_Koenig-980635527.mp3" autoplay preload></audio>
-                
+<!--             <audio src="assets/Ocean_Waves-Mike_Koenig-980635527.mp3" autoplay preload></audio>
+                 -->
             <a-asset-item src="assets/red_fish_model.obj" id="red_fish_obj"></a-asset-item>
             <a-asset-item src="assets/red_fish_model.mtl" id="red_fish_mtl"></a-asset-item>
             <a-mixin id="red_fish"></a-mixin>
@@ -47,7 +48,9 @@
             
             <a-sky color=#4f8ba8></a-sky>
             
-            <a-sphere color="yellow" radius="5" position="0 20 0"></a-sphere>
+            <a-sphere color="yellow" radius="3" position="0 20 0"></a-sphere>
+            
+            <a-entity light="type: spot; angle: 90; distance: 15; target: 0 0 0; position: 0 20 0;"></a-entity>
             
             <a-entity mixin="bird" obj-model="obj: #bird_obj; mtl: #bird_mtl" position="2 0.4 0" rotation = "0 30 0" scale= ".5 .5 .5" animation="property: position; from: 2 0.4 0; to: 4 .4 0; loop: true; dir: alternate; dur: 1000;" animation__2="property: rotation; to: 0 180 0; loop:true; dir: alternate; delay: 1000; dur: 1000;"></a-entity>
             
